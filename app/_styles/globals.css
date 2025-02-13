@@ -4,21 +4,15 @@
 
 @layer components {
   .spinner {
-    margin: 3.2rem auto 1.6rem;
-    width: 60px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 8px solid theme("colors.primary.900");
-    border-right-color: theme("colors.primary.200");
+    @apply m-[3.2rem_auto_1.6rem] w-[60px] aspect-square rounded-full border-[8px] border-solid border-primary-900;
+    border-right-color: theme(
+      "colors.primary.200"
+    ); /* Bisa diubah ke @apply kalau error */
     animation: rotate 1s infinite linear;
   }
 
   .spinner-mini {
-    margin: 0;
-    width: 20px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 2px solid theme("colors.primary.200");
+    @apply m-0 w-[20px] aspect-square rounded-full border-[2px] border-solid border-primary-200;
     border-right-color: transparent;
     animation: rotate 1s infinite linear;
   }
@@ -29,12 +23,17 @@
     }
   }
 }
-*/
-/* For data picker */
 
+/* Data Picker Styles */
 .rdp {
   --rdp-cell-size: 32px !important;
-  --rdp-accent-color: theme("colors.accent.500") !important;
-  --rdp-background-color: theme("colors.accent.600") !important;
+  --rdp-accent-color: var(
+    --tw-text-opacity,
+    theme("colors.accent.500")
+  ) !important;
+  --rdp-background-color: var(
+    --tw-bg-opacity,
+    theme("colors.accent.600")
+  ) !important;
   margin: 0 !important;
 }
