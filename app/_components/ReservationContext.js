@@ -19,7 +19,8 @@ function ReservationProvider({ children }) {
 
 function useReservation() {
   const context = useContext(ReservationContext);
-  if (context === undefined) throw new Error("Context was used");
+  if (context === undefined)
+    throw new Error("Context was used outside provider");
   return context;
 }
 

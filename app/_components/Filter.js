@@ -8,6 +8,7 @@ function Filter() {
   const pathname = usePathname();
 
   const activeFilter = searchParams.get("capacity") ?? "all";
+
   function handleFilter(filter) {
     const params = new URLSearchParams(searchParams);
     params.set("capacity", filter);
@@ -21,25 +22,22 @@ function Filter() {
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
-        all cabins
+        All cabins
       </Button>
-
       <Button
         filter="small"
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
-        8&mdash;12 guests
+        2&mdash;3 guests
       </Button>
-
       <Button
         filter="medium"
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
-        8&mdash;12 guests
+        4&mdash;7 guests
       </Button>
-
       <Button
         filter="large"
         handleFilter={handleFilter}
@@ -60,7 +58,7 @@ function Button({ filter, handleFilter, activeFilter, children }) {
       onClick={() => handleFilter(filter)}
     >
       {children}
-    </button> 
+    </button>
   );
 }
 
